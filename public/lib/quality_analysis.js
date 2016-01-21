@@ -123,7 +123,6 @@ var calcAllClass = function(){
 var QualityAnalysis = function() {
 	setInterval(function () {
 		var minute = new Date().getMinutes();
-		console.log(minute);
 		if (minute == 0) calcAllClass();
 	}, 30000);
 };
