@@ -49,9 +49,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var test = require('./public/lib/quality_analysis');
-
-test();
-
+var qualityAnalysis = require("./public/lib/quality_analysis");
+qualityAnalysis();
 
 module.exports = app;
