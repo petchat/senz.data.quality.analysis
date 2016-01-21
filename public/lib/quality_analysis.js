@@ -155,7 +155,7 @@ var QualityAnalysis = function() {
 		if (minute == 0){
 			calcAllClass();
 		}
-	}, 3000);
+	}, 30000);
 };
 
 
