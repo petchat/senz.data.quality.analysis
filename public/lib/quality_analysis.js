@@ -46,16 +46,16 @@ var userInstallationMap = {
 var getTime = function(){
 	var now = new Date();
 
-	now.setHours(14);
-
+	now.setHours(now.getHours() - 1 );
 	now.setMinutes(0);
 	now.setSeconds(0);
+	console.log(now.toISOString());
 	var start = now.getTime();
 
 	now.setMinutes(59);
 	now.setSeconds(59);
 	var end = now.getTime();
-
+	console.log(now.toISOString());
 	return [start, end];
 };
 
@@ -155,7 +155,7 @@ var QualityAnalysis = function() {
 		if (minute == 0){
 			calcAllClass();
 		}
-	}, 30*1000);
+	}, 3000);
 };
 
 
