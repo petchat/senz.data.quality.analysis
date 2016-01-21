@@ -10,8 +10,8 @@ AV.initialize(logId, logKey);
 var Log = AV.Object.extend("Log");
 
 var userInstallationMap = {
-	"569f0f03c24aa80053b8157c": "DBzxiHMlFtX0Wr80s2qNBpd6FK1jLGe8",
-	"5624d68460b2b199f7628914":"U5j5sSNX3qEUPNv8wsWG1XuDMphhwGUQ",
+	"569f0f03c24aa80053b8157c":"DBzxiHMlFtX0Wr80s2qNBpd6FK1jLGe8",
+	"5624d68460b2b199f7628914":"clCdNs1Yd9B0o8oGkkro3s9N1kTpxBVf",
 	"5634da2360b22ab52ef82a45":"G93jbBRhtiWVGFULyLR9gPHDjUkl3S3R",
 	"560d7193ddb2dd00356f4e80":"mRruMjhKIunQ2u1qA9tAyb3F2edEc5oP",
 	"560bd9b7ddb2e44a621fc217":"tpktm6L2CS6qKTKveuH2gYIaqaCdbRUk",
@@ -35,7 +35,7 @@ var userInstallationMap = {
 	"55d845e100b0d7b2266ac668":"kJY4H24ojKYJQAmVDiKcVJSVp3fO7Npo",
 	"564575ac60b20fc9b99d8d9d":"4Y5KKBtB7TuPrAiQd14xE1EarhJu0EQ0",
 	"5684fa9e00b009a31af7efcb":"aoXQRUGjNb25HyG8J3wfIB9APjWp6mOe",
-	"558a5ee7e4b0acec6b941e96":"5RSndlIk9gxpwndcdOXLLeUjGNzGCaKN",
+	"558a5ee7e4b0acec6b941e96":"sFlPo3d40EXFvQ4sBiqMQ2sPJwf0XnbU",
 	"55f788f4ddb25bb7713125ef":"lq1V2vWODJMDOoplWPHMH3HLFJuJW6kL",
 	"55c1e2d900b0ee7fd66e8ea3":"ipAujsbPwifG5EMPcec9gCXeVSFyp2EN",
 	"5653c88e00b0e772838cd61b":"k5luekqGhj9JUYnG7jIJRIPL5tNn0czA",
