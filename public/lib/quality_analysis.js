@@ -11,7 +11,36 @@ var Log = AV.Object.extend("Log");
 
 var userInstallationMap = {
 	"569f0f03c24aa80053b8157c": "DBzxiHMlFtX0Wr80s2qNBpd6FK1jLGe8",
-	"5624d68460b2b199f7628914":"U5j5sSNX3qEUPNv8wsWG1XuDMphhwGUQ"
+	"5624d68460b2b199f7628914":"U5j5sSNX3qEUPNv8wsWG1XuDMphhwGUQ",
+	"5634da2360b22ab52ef82a45":"G93jbBRhtiWVGFULyLR9gPHDjUkl3S3R",
+	"560d7193ddb2dd00356f4e80":"mRruMjhKIunQ2u1qA9tAyb3F2edEc5oP",
+	"560bd9b7ddb2e44a621fc217":"tpktm6L2CS6qKTKveuH2gYIaqaCdbRUk",
+	"561bdea960b2de2d09810f22":"SmP8BGCuFKkveWnJli6v82Ls80Dcqe0U",
+	"5624b97660b296e5979bce05":"0pMVJ0w2VJXbt0MKdKplDKaMLCTEubM1",
+	"5624ce21ddb24819b84d59d2":"oKNszXSBwhJ2ffLW8REwelucDlYAsUbP",
+	"560bdbcb60b267e6db7aa2a9":"6IlHq2FGpaOV2xqyGh43cVLrdIgTK95g",
+	"560e7b25ddb2e44a624f4d4e":"mbEmGcVhBpEvypVCb817z9dUu9aetxHn",
+	"5625af4060b202593e53cda7":"jtcmMusRc3G6MrciP16fgiXby7cAFzqm",
+	"562881ae60b2260e76fc77cb":"iNP06vsxqdxEA5hHdkGnA0mYy4tr2NvN",
+	"5627226c00b09f851ff4a200":"A9ShIco5L0t1Akfyhe9MwMutGMePqrXV",
+	"564156f160b262671ea7aa65":"kyOLAICaT7jHbGNA9DpEVk2xaq51yYeQ",
+	"5689cf3700b09aa2fdd88d3b":"p95f3qTptXDhs2W9USx1MTi7Cc9N6zbW",
+	"569ccda100b04bbf1ee10b4a":"RlX6tbryE7tj58NFo8b7mLpbCQjg27EK",
+	"568a0ca200b01b9f2c08f53d":"ynnAdkuvdolGEsxhUYIpyL70nJGVDX7b",
+	"5684d18200b068a2a955aefc":"ntK466fF6qCfJeYLwGYJ8od5L8n1gwXD",
+	"5604e5ce60b2521fb8eb240a":"1KwFXGJkRKb4V4wgcK59mCBFzXap91po",
+	"56406b4a00b0ee7f57b5c3a3":"CpMjyBI2oGAjJDfQiehPnzDchlmAWxzA",
+	"5689cd6d60b2e57ba2c05e4c":"FXiPOQjv2stL1FAuDieWmSwjlanVEGmf",
+	"564bd84b60b2ed362064985f":"kQOCfohjsGYbr1xQokcrgvigluS0Ab97",
+	"55d845e100b0d7b2266ac668":"kJY4H24ojKYJQAmVDiKcVJSVp3fO7Npo",
+	"564575ac60b20fc9b99d8d9d":"4Y5KKBtB7TuPrAiQd14xE1EarhJu0EQ0",
+	"5684fa9e00b009a31af7efcb":"aoXQRUGjNb25HyG8J3wfIB9APjWp6mOe",
+	"558a5ee7e4b0acec6b941e96":"5RSndlIk9gxpwndcdOXLLeUjGNzGCaKN",
+	"55f788f4ddb25bb7713125ef":"lq1V2vWODJMDOoplWPHMH3HLFJuJW6kL",
+	"55c1e2d900b0ee7fd66e8ea3":"ipAujsbPwifG5EMPcec9gCXeVSFyp2EN",
+	"5653c88e00b0e772838cd61b":"k5luekqGhj9JUYnG7jIJRIPL5tNn0czA",
+	"5682580d00b0f9a1f22748c7":"yKJpjUD6ouU8oUnX3Sq8BO03AWrW4QQy",
+	"5684d3d660b2b60f65d84285":"h8CQnD4g3VtojKIdymYEcRAIMidOH6wG"
 };
 
 var getTime = function(){
@@ -70,10 +99,10 @@ var calcRawLog = function(config){
 			logger.debug("Log", numbers);
 			numbers.forEach(function(data, index){
 				if(data < config.count[0]){
-					logger.warn("Log", users[index] + " less than min!");
+					logger.warn("Log", users[index] + "[data]: " + data + " less than min!");
 				}
 				if(data > config.count[1]){
-					logger.warn("Log", users[index] + " greater than max!");
+					logger.warn("Log", users[index] + "[data]: " + data + " greater than max!");
 				}
 			})
 		})
@@ -103,10 +132,10 @@ var calcUserLocation = function(config){
 				logger.debug("UserLocation", numbers);
 				numbers.forEach(function(data, index){
 					if(data < config.count[0]){
-						logger.warn("UserLocation", users[index] + " less than min!");
+						logger.warn("UserLocation", users[index] + "[data]: " + data + " less than min!");
 					}
 					if(data > config.count[1]){
-						logger.warn("UserLocation", users[index] + " greater than max!");
+						logger.warn("UserLocation", users[index] + "[data]: " + data + " greater than max!");
 					}
 				});
 			});
@@ -123,8 +152,10 @@ var calcAllClass = function(){
 var QualityAnalysis = function() {
 	setInterval(function () {
 		var minute = new Date().getMinutes();
-		if (minute == 0) calcAllClass();
-	}, 30000);
+		if (minute == 0){
+			calcAllClass();
+		}
+	}, 30*1000);
 };
 
 
